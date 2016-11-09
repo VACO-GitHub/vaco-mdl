@@ -1,0 +1,101 @@
+#wheel {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .is-small-screen .mdl-gen & {
+    min-height: 100vw;
+  }
+  .label {
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(.4, .0, 1, 1);
+    text-anchor: middle;
+    fill: white;
+  }
+  .mdl-gen-download {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .mdl-button {
+      transform: translate(-50%, -50%);
+    }
+  }
+  .selected {
+    opacity: 1 !important;
+    .selector, &--1 .label--1, &--2 .label--2 {
+      opacity: 1;
+    }
+  }
+  .selector {
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(.4, .0, 1, 1);
+    fill: #bdbdbd;
+  }
+  g[data-color] {
+    opacity: 1;
+    transition: opacity .2s cubic-bezier(.4, .0, 1, 1);
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    &.hide-nonaccents g {
+      &[data-color="Blue Grey"]:not(.selected), &[data-color="Brown"]:not(.selected), &[data-color="Grey"]:not(.selected) {
+        opacity: .12;
+      }
+    }
+    @media (min-width: 840px) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  @at-root .content {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-bottom: 80px;
+    margin-left: auto;
+  }
+  @at-root .mdl-gen {
+    > .mdl-grid {
+      max-width: 1280px;
+      padding: 0;
+    }
+    &__cdn .demo-code {
+      box-sizing: border-box;
+    }
+    &__desc strong, &__desc p {
+        display: block;
+        margin-bottom: 32px;
+        color: rgba(0, 0, 0, .54);
+    }
+    &__panel--right {
+      display: flex;
+      padding-bottom: 0;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+    }
+    &__preview {
+      position: relative;
+      height: 350px;
+      .mdl-layout {
+        &__container { height: auto; }
+        &__content {
+          display: flex;
+          padding: 32px;
+          flex-direction: column;
+          background-color: #efefef;
+          justify-content: flex-start;
+          align-items: flex-start;
+          .mdl-button {
+            margin: 0;
+            &--fab { align-self: flex-end; }
+          }
+          h3 { margin-top: 0; }
+        }
+      }
+    }
+  }
+}

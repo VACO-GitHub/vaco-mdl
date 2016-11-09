@@ -1,0 +1,12 @@
+// Header navigation fix to ensure display
+.docs-layout .docs-layout-header.mdl-layout__header {
+  display: block;
+}
+
+body > div.mdl-layout__container > div > main > div > section.about-panel.about-panel {
+  $class: unquote(".mdl-color-text--white.mdl-cell.mdl-cell--6-col");
+  &--#{"styles"+$class}, &--#{"components"+$class} {
+    width: 50%;
+    float: left;
+  }
+}
